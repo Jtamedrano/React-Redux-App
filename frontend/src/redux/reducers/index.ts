@@ -1,5 +1,10 @@
 import { combineReducers } from 'redux';
 
-import { jobListReducer } from './jobListReducer';
+import { jobListReducer, IjobListState } from './jobListReducer';
 
-export default combineReducers({ jobList: jobListReducer });
+export interface IreducerMap {
+  jobList: IjobListState;
+}
+
+export default combineReducers<IreducerMap>({ jobList: jobListReducer });
+export * from './jobListReducer';
